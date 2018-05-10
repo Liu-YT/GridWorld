@@ -1,0 +1,15 @@
+		/*
+		//set font
+		num1.setFont(new Font("SimSun",1,25));
+		num1.setHorizontalAlignment(JTextField.CENTER);
+		num2.setFont(new Font("SimSun",1,25));
+
+		//let font be center
+		num2.setHorizontalAlignment(JTextField.CENTER);
+		operating.setFont(new Font("SimSun",1,25));
+		operating.setHorizontalAlignment(JTextField.CENTER);
+		operating.setEditable(false);
+		ans.setFont(new Font("SimSun",1,25));
+		ans.setHorizontalAlignment(JTextField.LEFT);
+		ans.setEditable(false);
+		*/
