@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+
+import info.gridworld.actor.Actor;
+import info.gridworld.grid.Grid;
+import info.gridworld.grid.Location;
+
+public class QuickCrab extends CrabCritter
+{	
+	/**
+     * Finds the valid adjacent locations of this critter in different
+     * directions.
+     * @param directions - an array of directions (which are relative to the
+     * current direction)
+     * @return a set of valid locations that are neighbors of the current
+     * location in the given directions
+     */
+    /**
+     * @return list of empty locations immediately to the right and to the left
+     */
+    public ArrayList<Location> getMoveLocations()
+    {
+    	 ArrayList<Location> locs = new ArrayList<Location>();
+    	 Location location = getLocation();
+    	 Grid<Actor> grid =  getGrid();
+         int[] dirs = { Location.LEFT, Location.RIGHT };
+         for (int dir : dirs) {
+        	 Location one = location.getAdjacentLocation(dir);
+        	 Location two = two.getAdjacentLocation(dir);
+        	 if(grid.isValid(one) && grid.isValid(two) && grid.get(one) == null && grid.get(two) == null) {
+        		 locs.add(two);
+        	 }
+         }
+         if(locs.size() == 0) {
+        	 return super.getMoveLocations();
+         }
+         return locs;
+    }
+   
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="info.gridworld.actor.Actor"/>
+<fullyQualifiedTypeName name="KingCrab"/>
+<fullyQualifiedTypeName name="info.gridworld.actor.Flower"/>
+<fullyQualifiedTypeName name="info.gridworld.actor.Rock"/>
+<fullyQualifiedTypeName name="info.gridworld.grid.Grid"/>
+<fullyQualifiedTypeName name="SparseBoundedGrid"/>
+<fullyQualifiedTypeName name="com.sun.prism.impl.Disposer.Target"/>
+<fullyQualifiedTypeName name="SparseGridNode"/>
+<fullyQualifiedTypeName name="info.gridworld.grid.UnboundedGrid"/>
+<fullyQualifiedTypeName name="info.gridworld.grid.AbstractGrid"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="info.gridworld.grid.Location"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="E"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="info.gridworld.actor.Bug"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+
+import info.gridworld.actor.Actor;
+import info.gridworld.grid.Grid;
+import info.gridworld.grid.Location;
+
+public class QuickCrab extends CrabCritter
+{	
+	public ArrayList<Location> getMoveLocations()
+    {
+        ArrayList<Location> locs = new ArrayList<Location>();
+        int[] dirs =
+            { Location.LEFT, Location.RIGHT };
+        for (Location loc : getLocationsInDirections(dirs))
+            if (getGrid().get(loc) == null)
+                locs.add(loc);
+
+        return locs;
+    }
+
+    /**
+     * If the crab critter doesn't move, it randomly turns left or right.
+     */
+    public void makeMove(Location loc)
+    {
+        if (loc.equals(getLocation()))
+        {
+            double r = Math.random();
+            int angle;
+            if (r < 0.5)
+                angle = Location.LEFT;
+            else
+                angle = Location.RIGHT;
+            setDirection(getDirection() + angle);
+        }
+        else
+            super.makeMove(loc);
+    }
+}

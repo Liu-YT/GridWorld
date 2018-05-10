@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+
+import info.gridworld.actor.Actor;
+import info.gridworld.grid.Grid;
+import info.gridworld.grid.Location;
+
+public class QuickCrab extends CrabCritter
+{	
+	public ArrayList<Location> getMoveLocations()
+    {
+        ArrayList<Location> locs = new ArrayList<Location>();
+        int[] dirs =
+            { Location.LEFT, Location.RIGHT };
+        for (Location loc : getLocationsInDirections(dirs))
+            if (getGrid().get(loc) == null)
+                locs.add(loc);
+
+        return locs;
+    }
+}

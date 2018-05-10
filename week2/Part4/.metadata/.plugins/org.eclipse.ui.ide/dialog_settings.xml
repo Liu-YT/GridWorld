@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="F:\GridWorld(大二实训)\gridworld\GridWorldCode\projects\critters"/>
+		<item value="F:\GridWorld(大二实训)\gridworld\GridWorldCode\projects\firstProject"/>
+		<item value="C:\Users\LIUYT\Desktop\GridWorldCode"/>
+		<item value="F:\GridWorld(大二实训)\week2\Part5"/>
+		<item value="F:\GridWorld(大二实训)\week2\Part4\BlusterCritter"/>
+		<item value="F:\GridWorld(大二实训)\week2\Part4\CrabCritter.java"/>
+		<item value="F:\GridWorld(大二实训)\week2\Part4\ChameleonCritter"/>
+		<item value="F:\GridWorld(大二实训)\week2\Part4\ChameleonKid"/>
+		<item value="F:\GridWorld(大二实训)\week2\Part4\QuickCrab"/>
+	</list>
+	<section name="ExternalProjectImportWizard">
+	</section>
+</section>

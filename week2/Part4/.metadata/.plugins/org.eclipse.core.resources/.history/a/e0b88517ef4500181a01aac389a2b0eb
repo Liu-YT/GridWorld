@@ -1,0 +1,106 @@
+import java.util.ArrayList;
+
+import info.gridworld.grid.AbstractGrid;
+import info.gridworld.grid.Location;
+
+import java.util.*;
+
+/**
+ * An <code>UnboundedGrid</code> is a rectangular grid with an unbounded number of rows and
+ * columns. <br />
+ * The implementation of this class is testable on the AP CS AB exam.
+ */
+public class UnboundedGrid2<E> extends AbstractGrid<E>
+{
+    private Object[][] occupantArray;// the array storing the grid elements
+    private int size;	//the size of the grid
+
+    /**
+     * Constructs an empty unbounded grid.
+     */
+    public UnboundedGrid2(){
+        row=column=16;
+        occupantArray = new Object[row][column];
+    }
+
+    public int getNumRows(){
+        return -1;
+    }
+
+    public int getNumCols(){
+        return -1;
+    }
+
+    public boolean isValid(Location loc){
+        return loc.getRow()>=0 && loc.getCol()>=0;
+    }
+
+    public ArrayList<Location> getOccupiedLocations(){
+        ArrayList<Location> theLocations = new ArrayList<Location>();
+
+        // Look at all grid locations.
+        for (int i = 0; i < row; i++){
+            for (int j = 0; j < column; j++){
+                // If there's an object at this location, put it in the array.
+                Location loc = new Location(i, j);
+                if (get(loc) != null)
+                    theLocations.add(loc);
+            }
+        }
+
+        return theLocations;
+    }
+
+    public E get(Location loc){
+        if (!isValid(loc))
+            throw new IllegalArgumentException("Location " + loc
+                    + " is not valid");
+        if(loc.getRow()>=row || loc.getCol()>=column)
+        	return null;
+        return (E) occupantArray[loc.getRow()][loc.getCol()]; // unavoidable warning
+    }
+
+    public E put(Location loc, E obj)
+    {
+        if (!isValid(loc))
+            throw new IllegalArgumentException("Location " + loc
+                    + " is not valid");
+        if (obj == null)
+            throw new NullPointerException("obj == null");
+
+        if(loc.getRow()>=row || loc.getCol()>=column)
+        	extendMap(loc.getRow(), loc.getCol());
+        // Add the object to the grid.
+        E oldOccupant = get(loc);
+        occupantArray[loc.getRow()][loc.getCol()] = obj;
+        return oldOccupant;
+    }
+
+    public E remove(Location loc)
+    {
+        if (!isValid(loc))
+            throw new IllegalArgumentException("Location " + loc
+                    + " is not valid");
+        if(loc.getRow()>=row || loc.getCol()>=column)
+        	return null;
+        // Remove the object from the grid.
+        E r = get(loc);
+        occupantArray[loc.getRow()][loc.getCol()] = null;
+        return r;
+    }
+    
+    public void extendMap(int _row, int _col) {
+    	int oldRow=row, oldCol=column;
+    	while(_row>row || _col>column) {
+    		row*=2;
+    		column*=2;
+    	}
+    	Object[][] newMap=new Object[row][column];
+    	for(int i=0; i<oldRow; i++) {
+    		for(int j=0; j<oldCol; j++) {
+    			newMap[i][j]=occupantArray[i][j];
+    		}
+    	}
+    	occupantArray=newMap;
+    }
+}

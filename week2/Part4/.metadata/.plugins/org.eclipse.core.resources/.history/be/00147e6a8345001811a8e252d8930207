@@ -1,0 +1,63 @@
+import info.gridworld.actor.Actor;
+import info.gridworld.actor.Critter;
+import info.gridworld.grid.Grid;
+import info.gridworld.grid.Location;
+
+import java.awt.Color;
+import java.util.ArrayList;
+
+public class BlusterCritter extends Critter
+{
+	private final int courage;
+	
+	public BlusterCritter(int c) {
+		courage = c;
+		// TODO Auto-generated constructor stub
+	}
+	
+	//change the color of the BlusterCritter
+	public void darken() {
+		Color c = getColor();
+		int red = (int) (c.getRed() * (1 + lightIntensity)) >= 255 ? 255 : (int) (c.getRed() * (1 + lightIntensity));
+		int green = (int) (c.getGreen() * (1 + lightIntensity)) >= 255 ? 255 : (int) (c.getGreen() * (1 + lightIntensity));
+		int blue = (int) (c.getBlue() * (1 + lightIntensity)) >= 255 ? 255 : (int) (c.getBlue() * (1 + lightIntensity));
+
+		setColor(new Color(red, green, blue));
+	}
+	
+	public void lighter() {
+		
+	}
+	
+	public ArrayList<Actor> getActors() {
+		ArrayList<Actor> actors = new ArrayList<Actor>();
+		Grid<Actor> grid = getGrid();
+		for(int i = getLocation().getRow() - 2; i <= getLocation().getRow() + 2; ++i) {
+			for(int j = getLocation().getCol() - 2; j <= getLocation().getCol() + 2; ++j) {
+				if(i == getLocation().getRow() && j == getLocation().getCol())	continue;
+				Location location = new Location(i, j);
+				if(grid.isValid(location) && grid.get(location) != null) {
+					actors.add(grid.get(location));
+				}					
+			}
+		}
+		return actors;
+	}
+	
+	public void processActors(ArrayList<Actor> actors) {
+		int count = 0;
+		if(actors.size() > 0) {
+			for(Actor actor : actors) {
+				if(actor instanceof Critter) {
+					++count;
+				}
+			}
+			if(count >= courage) {
+				darken();
+			}
+			else {
+			
+			}
+		}
+    }
+}
