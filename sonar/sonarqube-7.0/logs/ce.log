@@ -1,0 +1,18 @@
+2018.04.20 23:01:56 INFO  ce[][o.s.p.ProcessEntryPoint] Starting ce
+2018.04.20 23:01:56 INFO  ce[][o.s.ce.app.CeServer] Compute Engine starting up...
+2018.04.20 23:01:56 INFO  ce[][o.e.p.PluginsService] no modules loaded
+2018.04.20 23:01:56 INFO  ce[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+2018.04.20 23:01:56 INFO  ce[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2018.04.20 23:01:56 INFO  ce[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2018.04.20 23:01:56 INFO  ce[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2018.04.20 23:01:58 INFO  ce[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2018.04.20 23:01:58 INFO  ce[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://127.0.0.1:9092/sonar
+2018.04.20 23:01:58 WARN  ce[][o.s.d.DatabaseChecker] H2 database should be used for evaluation purpose only
+2018.04.20 23:01:58 INFO  ce[][o.s.s.p.ServerFileSystemImpl] SonarQube home: F:\GridWorld(大二实训)\sonar\sonarqube-7.0
+2018.04.20 23:01:59 INFO  ce[][o.s.c.c.CePluginRepository] Load plugins
+2018.04.20 23:02:08 INFO  ce[][o.s.c.q.PurgeCeActivities] Delete the Compute Engine tasks created before Sun Oct 22 23:02:08 CST 2017
+2018.04.20 23:02:08 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is operational
+2018.04.20 23:03:40 INFO  ce[][o.s.p.StopWatcher] Stopping process
+2018.04.20 23:03:40 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is stopping...
+2018.04.20 23:03:40 INFO  ce[][o.s.c.t.CeProcessingSchedulerImpl] Waiting for workers to finish in-progress tasks
+2018.04.20 23:03:41 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is stopped

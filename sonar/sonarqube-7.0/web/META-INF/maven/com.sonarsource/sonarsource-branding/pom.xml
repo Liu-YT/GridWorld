@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.sonarsource.parent</groupId>
+    <artifactId>parent</artifactId>
+    <version>41</version>
+    <relativePath />
+  </parent>
+
+  <groupId>com.sonarsource</groupId>
+  <artifactId>sonarsource-branding</artifactId>
+  <packaging>war</packaging>
+  <version>1.3.0.307</version>
+  <name>SonarSource :: SonarQube Branding</name>
+  <inceptionYear>2014</inceptionYear>
+
+  <properties>
+    <argLine>-Djava.awt.headless=true</argLine>
+    <gitRepositoryName>sonarsource-branding</gitRepositoryName>
+  </properties>
+
+  <scm>
+    <connection>scm:git:git@github.com:SonarSource/sonarsource-branding.git</connection>
+    <developerConnection>scm:git:git@github.com:SonarSource/sonarsource-branding.git</developerConnection>
+    <url>https://github.com/SonarSource/sonarsource-branding</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <build>
+    <resources>
+      <resource>
+        <!-- Used to set version in file src/main/resources/.../branding -->
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <archive>
+            <addMavenDescriptor>false</addMavenDescriptor>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+          <archive>
+            <manifest>
+              <addClasspath>false</addClasspath>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <version>2.11</version>
+        <configuration>
+          <includes>
+            <include>src/main/**/*.js</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
